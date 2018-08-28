@@ -1,0 +1,72 @@
+#N canvas 210 50 1077 772 10;
+#X obj 252 151 mtof;
+#X obj 252 180 *;
+#X obj 252 242 select 0;
+#X obj 285 180 *;
+#X obj 284 206 / 64;
+#X obj 309 243 sel 0;
+#X obj 252 118 unpack;
+#X floatatom 297 277 5 0 0 0 - - -, f 5;
+#X floatatom 336 330 5 0 0 0 - - -, f 5;
+#X obj 252 81 inlet;
+#X text 296 53 inlet from the larger note creater \, in this case the
+route function, f 24;
+#X text 377 139 inlet from the play mode toggle, f 11;
+#X obj 336 163 inlet;
+#X text 453 191 inlet from the sandbox mode toggle, f 11;
+#X obj 410 207 inlet;
+#X text 527 246 inlet that takes in the sandbox sequencer frequency
+, f 21;
+#X obj 482 260 inlet;
+#X text 611 297 inlet to see if the oscillators turned on change,
+f 17;
+#X obj 552 308 inlet;
+#X obj 241 452 outlet~;
+#X floatatom 217 135 5 0 0 0 - - -, f 5;
+#X obj 353 202 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 430 250 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 218 196 5 0 0 0 - - -, f 5;
+#X obj 99 361 Envelope, f 15;
+#X obj 336 344 select 1;
+#X floatatom 100 416 5 0 0 0 - - -, f 5;
+#X obj 100 393 env~;
+#X obj 241 378 *~;
+#X obj 240 325 CreateNote;
+#X obj 213 243 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 99 258 NoteBangOnOff, f 15;
+#X obj 241 421 *~ 0.2;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 23 0;
+#X connect 2 1 7 0;
+#X connect 3 0 4 0;
+#X connect 3 0 30 0;
+#X connect 4 0 5 0;
+#X connect 5 1 8 0;
+#X connect 6 0 0 0;
+#X connect 6 0 20 0;
+#X connect 6 1 3 0;
+#X connect 7 0 29 1;
+#X connect 8 0 25 0;
+#X connect 9 0 6 0;
+#X connect 12 0 1 1;
+#X connect 12 0 3 1;
+#X connect 12 0 5 1;
+#X connect 12 0 21 0;
+#X connect 14 0 8 0;
+#X connect 14 0 22 0;
+#X connect 16 0 7 0;
+#X connect 18 0 29 0;
+#X connect 24 0 27 0;
+#X connect 24 0 28 1;
+#X connect 25 1 24 1;
+#X connect 27 0 26 0;
+#X connect 28 0 32 0;
+#X connect 29 0 28 0;
+#X connect 30 0 31 0;
+#X connect 31 0 24 0;
+#X connect 31 1 24 2;
+#X connect 32 0 19 0;
